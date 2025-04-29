@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3AODEV - Votre partenaire de confiance pour [informatique]">
+    <meta name="keywords" content="entreprise, [site], [site web], [blog , e-commerce , vitrine]">
+    <meta name="author" content="3AODEV">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://votre-site.com">
+    <meta property="og:title" content="3AODEV">
+    <link rel="icon" type="image/png" href="3aodev.png">
+
+    <meta property="og:description" content="Nous offrons des services exceptionnels dans le domaine de [informatique].">
+    <meta property="og:image" content="https://votre-site.com/image.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <title>3AODEV  | Créateur de sites puissants</title>
+    <link rel="stylesheet" href="mp.css">
+   
+</head>
+<body>
+<header class="navbar">
+  <nav class="nav-container">
+    <a href="tel:+2290140068605" class="cta-button" aria-label="Contactez-nous">3AODEV</a>
+    
+
+    <div class="hamburger" onclick="toggleMenu()" aria-label="Menu mobile">
+      ☰
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="Accueil.html">Accueil</a></li>
+      <li><a href="service.html">Services</a></li>
+      
+      <a href="mailto:aryusayi2@gmail.com">Contact</a>
+    </ul>
+
+  </nav>
+</header>
+
+
+ 
+
+<main>
+    <section id="hero" aria-labelledby="hero-heading">
+        <h1 id="hero-heading">Bienvenue chez 3AODEV</h1>
+        <p>Des solutions innovantes pour vos projets web et digitaux.</p>
+
+         <a href="tel:+2290140068605" class="cta-button" aria-label="Contactez-nous">Contactez-nous</a>
+    
+    </section>
+
+    <section id="devis">
+    <div class="container">
+        <h2>Demander un Devis</h2>
+        <p>Obtenez un devis personnalisé pour vos besoins de développement frontend.</p>
+        <form action="https://formspree.io/f/meogeger" method="post">
+            <div class="form-group">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="projet">Description du projet</label>
+                <textarea id="projet" name="projet" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="budget">Budget estimé</label>
+                <input type="number" id="budget" name="budget" min="0" required>
+            </div>
+            <button type="submit" class="btn">Envoyer</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+<footer>
+    <p>&copy; 2025 3AODEV | <a href="#" aria-label="Mentions légales">Mentions légales</a></p>
+   <div class="social-links" aria-label="Réseaux sociaux">
+  <a href="https://www.facebook.com/profile.php?id=100060646531207" target="_blank" aria-label="Facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+  <a href="https://x.com/aryus72407?t=BwnYze8VXcSTp6Tf2Mymlw&s=09" target="_blank" aria-label="Twitter">
+    <i class="fab fa-twitter"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/aryus-ayi-b6879a328?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn">
+    <i class="fab fa-linkedin-in"></i>
+  </a>
+</div>
+
+</footer>
+<script>
+    // Performance Optimization: Lazy loading images (if any in the future)
+    document.addEventListener('DOMContentLoaded', function () {
+        let lazyImages = document.querySelectorAll('img.lazy');
+        lazyImages.forEach(img => {
+            img.src = img.dataset.src;
+        });
+    });
+
+    // Example: Smooth scroll when clicking navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<script>
+  const text = "Bienvenue chez 3AODEV";
+  const target = document.getElementById('hero-heading');
+  let index = 0;
+  let forward = true;
+
+  function typeEffect() {
+    if (forward) {
+      target.textContent = text.slice(0, index++);
+      if (index > text.length) {
+        forward = false;
+        setTimeout(typeEffect, 2000); // pause avant de tout effacer
+        return;
+      }
+    } else {
+      target.textContent = text.slice(0, index--);
+      if (index < 0) {
+        forward = true;
+      }
+    }
+    setTimeout(typeEffect, 100);
+  }
+
+  typeEffect();
+</script>
+
+<script>
+  function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    navLinks.classList.toggle("active");
+  }
+</script>
+
+
+
+
+</body>
+</html>
